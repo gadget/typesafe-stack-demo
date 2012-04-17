@@ -1,13 +1,12 @@
-package com.greenformatics.typesafe
+package calculator
 
+import akka.actor.ActorSystem
+import akka.actor.Props
 import akka.kernel.Bootable
-import akka.actor.{ Props, Actor, ActorSystem }
-import com.typesafe.config.ConfigFactory
-import com.greenformatics.typesafe.actors._
 
 class CalculatorApplication extends Bootable {
 
-  val system = ActorSystem("CalculatorApplication")
+  val system = ActorSystem("calculatorActorSystem")
   val actor = system.actorOf(Props[Calculator], "calculator")
 
   def startup() {
@@ -19,7 +18,7 @@ class CalculatorApplication extends Bootable {
 
 }
 
-object CalcApp {
+object CalculatorApplication {
 
   def main(args: Array[String]) {
     new CalculatorApplication
