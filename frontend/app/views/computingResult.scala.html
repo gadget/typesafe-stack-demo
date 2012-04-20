@@ -1,4 +1,4 @@
-@(start: Int, elements: Int, result: Double)
+@(start: Int, elements: Int, workResult: calculator.WorkResult)
 
 @main("Result") {
     
@@ -13,7 +13,10 @@
     </p>
     
     <p>
-        Result: @result
+        Result: @workResult.result
     </p>
     
+    <p>
+        Calculator: @workResult.calculator
+    </p>
 }

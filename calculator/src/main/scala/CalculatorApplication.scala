@@ -7,9 +7,9 @@ import akka.kernel.Bootable
 class CalculatorApplication extends Bootable {
 
   val system = ActorSystem("calculatorActorSystem")
-  val actor = system.actorOf(Props[Calculator], "calculator")
 
   def startup() {
+    system.actorOf(Props[Calculator], "calculator")
   }
 
   def shutdown() {

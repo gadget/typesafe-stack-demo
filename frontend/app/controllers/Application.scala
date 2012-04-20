@@ -21,7 +21,7 @@ object Application extends Controller {
   def compute(start: Int, elements: Int) = Action {
     AsyncResult {
       implicit val timeout = Timeout(5.seconds)
-      (router ? Work(start, elements)).mapTo[Double].asPromise.map { result =>
+      (router ? Work(start, elements)).mapTo[WorkResult].asPromise.map { result =>
         Ok(views.html.computingResult(start, elements, result))
       }
     }

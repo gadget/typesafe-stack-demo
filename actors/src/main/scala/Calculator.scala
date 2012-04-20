@@ -4,6 +4,7 @@ import akka.actor.actorRef2Scala
 import akka.actor.Actor
 
 case class Work(start: Int, nrOfElements: Int)
+case class WorkResult(calculator: Int, result: Double)
 
 class Calculator extends Actor {
 
@@ -16,7 +17,7 @@ class Calculator extends Actor {
   }
 
   def receive = {
-    case Work(start, nrOfElements) => sender ! (calculatePiFor(start, nrOfElements))
+    case Work(start, nrOfElements) => sender ! (WorkResult(this.hashCode(), calculatePiFor(start, nrOfElements)))
   }
 
 }
