@@ -1,0 +1,2 @@
+Demo project for the blog post:
+Typesafe Stack 2.0 - http://gadget.greenformatics.hu/typesafe-stack-20
