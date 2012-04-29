@@ -1,2 +1,15 @@
-Demo project for the blog post:
-Typesafe Stack 2.0 - http://gadget.greenformatics.hu/typesafe-stack-20
+Demo project for the blog post: "Typesafe Stack 2.0":http://gadget.greenformatics.hu/typesafe-stack-20
+
+I have used the "pi-calculator sample project":https://github.com/playframework/Play20/tree/master/samples/workinprogress/pi-calculator as a starting point and made several changes to follow a typical enterprise architecture that has:
+* a web frontend for user interaction running in a web container
+* multiple calculation engines/batch servers running in their dedicated jvm, communicating with the frontend by messages
+
+To run the standalone calculator application:
+gadget@devblog:~/workspaces/typesafe-stack-demo$ sbt
+> project typesafe-stack-demo-calculator
+> run
+
+To run the frontend:
+gadget@devblog:~/workspaces/typesafe-stack-demo$ sbt
+> project typesafe-stack-demo-frontend
+> run
